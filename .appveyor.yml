@@ -1,6 +1,6 @@
 # https://www.appveyor.com/docs/lang/nodejs-iojs/
 # https://www.appveyor.com/docs/appveyor-yml/
-image: ubuntu
+image: ubuntu 18.04
 
 stack: node 10
 
