@@ -15,6 +15,5 @@ test_script:
 deploy_script:
   - mkdir dist && cp -R src/js src/index.html dist
   - git config --global credential.helper store
-  - echo $GITHUB_TOKEN
-#  - echo "https://$($env:GITHUB_TOKEN):x-oauth-basic@github.com\n" > "~/.git-credentials"
-#  - git subtree push --prefix dist origin gh-pages
+  - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
+  - git subtree push --prefix dist origin gh-pages
