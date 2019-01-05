@@ -4,13 +4,15 @@ branches:
   only:
     - master
 
-install:
-  - npm install
+#install:
+#  - npm install
 
 build: off
 
-test_script:
-  - npm test
+test: off
+
+#test_script:
+#  - npm test
 
 deploy_script:
   - mkdir dist
