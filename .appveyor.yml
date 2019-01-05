@@ -16,4 +16,5 @@ deploy_script:
   - mkdir dist && cp -R src/js src/index.html dist
   - git config --global credential.helper store
   - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
+  - ls /usr/lib/git-core
   - git subtree push --prefix dist origin gh-pages
