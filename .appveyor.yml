@@ -10,5 +10,5 @@ install:
 test_script:
   - npm test
 
-build_script:
-  - mkdir dist && - cp -R src/js src/index.html dist
+deploy_script:
+  - mkdir dist && cp -R src/js src/index.html dist
