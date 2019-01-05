@@ -20,4 +20,4 @@ deploy_script:
   - git config --global user.name Appveyor
   - git config --global user.email appveyor@appveyor.com
   - echo "https://%GITHUB_TOKEN%:x-oauth-basic@github.com" > "%HOME%/.git-credentials"
-  - git subtree push --prefix dist origin gh-pages
+  - git subtree push --force --prefix dist origin gh-pages
