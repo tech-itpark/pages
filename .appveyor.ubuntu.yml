@@ -1,0 +1,26 @@
+# https://www.appveyor.com/docs/lang/nodejs-iojs/
+# https://www.appveyor.com/docs/appveyor-yml/
+# https://help.appveyor.com/discussions/questions/2894-pushing-to-gh-pages
+image: Ubuntu1804
+
+stack: node 10
+
+branches:
+  only:
+    - master
+
+install:
+  - npm install
+
+build: off
+
+test_script:
+  - npm test
+
+deploy_script:
+  - mkdir dist && cp -R src/js src/index.html dist
+  - git config --global credential.helper store
+  - git config --global user.name Appveyor
+  - git config --global user.email appveyor@appveyor.com
+  - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
+  - npx push-dir --dir=dist --branch=gh-pages --force --verbose
