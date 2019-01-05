@@ -9,6 +9,8 @@ branches:
   only:
     - master
 
+cache: node_modules
+
 install:
   - npm install
 
