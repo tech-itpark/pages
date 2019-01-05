@@ -19,9 +19,10 @@ deploy_script:
   - xcopy src\js dist /E
   - xcopy src\index.html dist /E
   - git config --global credential.helper store
-  - git config --global user.name Appveyor
-  - git config --global user.email appveyor@appveyor.com
+  - git config --global user.name AppVeyor
+  - git config --global user.email ci@appveyor.com
   - (echo https://%GITHUB_TOKEN%:x-oauth-basic@github.com) > %USERPROFILE%\.git-credentials
-  - dos2unix %USERPROFILE%\.git-credentials
+#  - dos2unix %USERPROFILE%\.git-credentials
+  - npx -p whitespace-tools ender %USERPROFILE%\.git-credentials
 #  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:GITHUB_TOKEN):x-oauth-basic@github.com`n"
   - npx push-dir --dir=dist --branch=gh-pages --force --verbose
