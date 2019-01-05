@@ -19,5 +19,7 @@ test_script:
 deploy_script:
   - mkdir dist && cp -R src/js src/index.html dist
   - git config --global credential.helper store
+  - git config --global user.name Appveyor
+  - git config --global user.email appveyor@appveyor.com
   - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
   - npx push-dir --dir=dist --branch=gh-pages --force --verbose
