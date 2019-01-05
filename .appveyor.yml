@@ -21,7 +21,7 @@ deploy_script:
   - git config --global credential.helper store
   - git config --global user.name AppVeyor
   - git config --global user.email ci@appveyor.com
-  - echo "https://%GITHUB_TOKEN%:x-oauth-basic@github.com" > "%USERPROFILE%\.git-credentials"
+  - echo https://%GITHUB_TOKEN%:x-oauth-basic@github.com > "%USERPROFILE%\.git-credentials"
 #  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:GITHUB_TOKEN):x-oauth-basic@github.com`n"
   - dos2unix %USERPROFILE%\.git-credentials
   - more %USERPROFILE%\.git-credentials
