@@ -1,0 +1,14 @@
+# https://www.appveyor.com/docs/lang/nodejs-iojs/
+# https://www.appveyor.com/docs/appveyor-yml/
+image: ubuntu
+
+stack: node 10
+
+install:
+  - npm install
+
+test_script:
+  - npm test
+
+build_script:
+  - mkdir dist && - cp -R src/js src/index.html dist
