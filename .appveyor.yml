@@ -23,6 +23,7 @@ deploy_script:
   - git config --global user.email ci@appveyor.com
   - echo https://%GITHUB_TOKEN%:x-oauth-basic@github.com>%USERPROFILE%\.git-credentials
   - 'echo: >>%USERPROFILE\.git-credentials'
+  - 'echo last line >>%USERPROFILE\.git-credentials'
   - echo %USERPROFILE%
   - type C:\Users\appveyor\.git-credentials
 #  - echo(>>"%USERPROFILE%\.git-credentials"
