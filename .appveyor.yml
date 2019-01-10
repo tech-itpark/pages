@@ -16,8 +16,8 @@ test_script:
 
 deploy_script:
   - mkdir dist
-  - xcopy src\js dist /E
-  - xcopy src\index.html dist /E
+  - copy src\js dist
+  - copy src\index.html dist
   - git config --global credential.helper store
   - git config --global user.name AppVeyor
   - git config --global user.email ci@appveyor.com
