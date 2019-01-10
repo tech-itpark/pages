@@ -29,6 +29,6 @@ deploy_script:
 #  - echo(>>"%USERPROFILE%\.git-credentials"
 #  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:GITHUB_TOKEN):x-oauth-basic@github.com`n"
 #  - more %USERPROFILE%\.git-credentials
-   - dos2unix -id %USERPROFILE%\.git-credentials
+   - 'dos2unix -id %USERPROFILE%\.git-credentials'
 #  - more %USERPROFILE%\.git-credentials
   - npx push-dir --dir=dist --branch=gh-pages --force --verbose
