@@ -22,13 +22,13 @@ deploy_script:
   - git config --global user.name AppVeyor
   - git config --global user.email ci@appveyor.com
   - echo https://%GITHUB_TOKEN%:x-oauth-basic@github.com>%USERPROFILE%\.git-credentials
-  - 'echo: >>%USERPROFILE\.git-credentials'
-  - 'echo last line >>%USERPROFILE\.git-credentials'
+  - 'echo:>>%USERPROFILE%\.git-credentials'
+  - 'echo last line >>%USERPROFILE%\.git-credentials'
   - echo %USERPROFILE%
   - type C:\Users\appveyor\.git-credentials
 #  - echo(>>"%USERPROFILE%\.git-credentials"
 #  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:GITHUB_TOKEN):x-oauth-basic@github.com`n"
 #  - more %USERPROFILE%\.git-credentials
-#  - dos2unix %USERPROFILE%\.git-credentials
+   - dos2unix -id %USERPROFILE%\.git-credentials
 #  - more %USERPROFILE%\.git-credentials
   - npx push-dir --dir=dist --branch=gh-pages --force --verbose
